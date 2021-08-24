@@ -48,8 +48,7 @@ BaselineOfFamixDiff >> definePackages: spec [
 				spec requires: #('Famix-Diff-Extensions' ). ];
 			package: 'Moose-TestResources-ModelDiff-P2';
 			package: 'Moose-TestResources-ModelDiff-P3';
-			package: 'Moose-TestResources-ModelDiff-P4';
-			package: 'Famix-Hash-Extension'.
+			package: 'Moose-TestResources-ModelDiff-P4'.
 
 "Ignored for now
 			package: 'Famix-Diff-Browser' with: [
