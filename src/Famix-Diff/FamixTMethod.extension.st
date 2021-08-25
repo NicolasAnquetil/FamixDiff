@@ -8,6 +8,12 @@ FamixTMethod >> getFamixClass [
 ]
 
 { #category : #'*Famix-Diff' }
+FamixTMethod >> identityMatch: otherEntity givenChanges: changes [ 
+	^(self identityNamedMatch: otherEntity givenChanges: changes)
+		and: [ self identitySignatureMatch: otherEntity givenChanges: changes ] 
+]
+
+{ #category : #'*Famix-Diff' }
 FamixTMethod >> moveMatch: otherEntity givenChanges: changes tolerance: percentage [
 	(super moveMatch: otherEntity givenChanges: changes tolerance: percentage)
 		ifFalse: [ ^ false ].
