@@ -24,14 +24,12 @@ BaselineOfFamixDiff >> defineDependencies: spec [
 { #category : #baselines }
 BaselineOfFamixDiff >> defineGroups: spec [
  		spec 
-			group: 'core' with: #('Famix-Diff-Core' #'Famix-Diff-ChangeModel' );
-			group: 'core-tests' with: #('core' 'Famix-Diff-Core-Test' 'Moose-TestResources-ModelDiff-P2' 'Moose-TestResources-ModelDiff-P3' 'Moose-TestResources-ModelDiff-P4') ;
-			group: 'extensions' with: #('core' 'Famix-Diff-Extensions' ) ;
-			group: 'extensions-tests' with: #('core-tests' 'extensions' 'Famix-Diff-Extensions-Tests' ).
-
-"Ignored for now
+			group: 'core' with: #('Famix-Diff' );
+			group: 'core-tests' with: #('core' 'Famix-Diff-Tests' 'Moose-TestResources-ModelDiff-P2' 'Moose-TestResources-ModelDiff-P3' 'Moose-TestResources-ModelDiff-P4') ;
+			group: 'utilities' with: #('core' 'Famix-Diff-Utilities' ) ;
+			group: 'utilities-tests' with: #('core-tests' 'utilities' 'Famix-Diff-Utilities-Tests' ) ;
 			group: 'browser' with: #('core' 'Famix-Diff-Browser' ) ;
-			group: 'browser-tests' with: #('core-tests' 'Famix-Diff-Browser-Tests' )."
+			group: 'browser-tests' with: #('core-tests' 'browser' 'Famix-Diff-Browser-Tests' ).
 
 ]
 
