@@ -45,14 +45,15 @@ FamixDiffChangeCompareTest >> testCompareAddMove2 [
 
 { #category : #tests }
 FamixDiffChangeCompareTest >> testCompareAddMove3 [
-	| att ass add1 mv |
-	att := self model entityNamed: 'Smalltalk::A3diff.att1'.
-	ass := (self model entityNamed: 'Smalltalk::A3diff') incomingReferences first.
+	| attribut reference add mv |
+	attribut := self model entityNamed: 'Smalltalk::A3diff.att1'.
+	reference := (self model entityNamed: 'Smalltalk::A3diff') incomingReferences first.
 	
-	add1 := FamixAddChange new entity: ass.
-	mv := FamixMoveChange new entity: att.
-	self assert: (mv comeBefore: add1 ).
-	self deny: (add1 comeBefore: mv).
+	add := FamixAddChange new entity: reference.
+	mv := FamixMoveChange new entity: attribut.
+
+	self assert: (mv comeBefore: add ).
+	self deny: (add comeBefore: mv).
 ]
 
 { #category : #tests }

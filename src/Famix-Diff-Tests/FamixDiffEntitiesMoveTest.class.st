@@ -78,7 +78,7 @@ FamixDiffEntitiesMoveTest >> testMoveMatchVariable [
 	var1 := snapshot baseModel entityNamed: 'Smalltalk::A3diff.c3().toto'.
 	FAMIXAccess new
 		variable: var1;
-		accessor: (snapshot baseModel entityNamed: 'Smalltalk::A3diff.b2()').
+		accessor: (snapshot baseModel entityNamed: 'Smalltalk::A3diff.b3()').
 	var2 := snapshot targetModel
 		entityNamed: 'Smalltalk::B3diff.c3().toto'.
 	FAMIXAccess new
@@ -86,7 +86,7 @@ FamixDiffEntitiesMoveTest >> testMoveMatchVariable [
 		accessor: (snapshot targetModel entityNamed: 'Smalltalk::A3diff.c3()').
 	FAMIXAccess new
 		variable: var2;
-		accessor: (snapshot targetModel entityNamed: 'Smalltalk::A3diff.b2()').
+		accessor: (snapshot targetModel entityNamed: 'Smalltalk::A3diff.b3()').
 	self
 		deny: (var1 moveMatch: var2 givenChanges: testChanges tolerance: 0).
 	self
