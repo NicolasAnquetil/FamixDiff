@@ -35,12 +35,11 @@ FamixDiffChangesSorter >> buildEdges [
 
 { #category : #computation }
 FamixDiffChangesSorter >> calculateChangesOrderOf: aCollectionOfChangesToSort [
-	graph := MalLongestPath new.
-	graph nodesFromSet: aCollectionOfChangesToSort asSet.
-	graph ensureNodesAreSorted.
+	graph := AILongestPathInDAG new.
+	graph nodes: aCollectionOfChangesToSort asSet.
+	graph nodes sort: [ :a :b | a model hash <= b model hash ] "ensureNodesAreSorted".
 	self buildEdges.
-	graph run.
-	^ self sortNodes
+	^graph topologicalSortedNodes
 ]
 
 { #category : #computation }
@@ -79,6 +78,7 @@ FamixDiffChangesSorter >> findInChanges: aKey [
 
 { #category : #accessing }
 FamixDiffChangesSorter >> run [
+
 	self sortChanges.
 	self result: (FamixDiffResult withAll: self calculateSortedChanges)
 ]
